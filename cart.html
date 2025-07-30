@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Cart | Revive</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    body {
+      background: #111318;
+      color: #f3f6fa;
+      font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+      font-size: 1.07rem;
+      margin: 0;
+      min-height: 100vh;
+    }
+    nav {
+      background: #191b22;
+      box-shadow: 0 2px 14px #16181d23;
+    }
+    .logo {
+      color: #18a3c5;
+      font-weight: 600;
+      font-size: 1.28rem;
+      letter-spacing: 1px;
+      text-decoration: none;
+      padding: 1.1rem 2.4rem 1.1rem 1.2rem;
+      display: inline-block;
+    }
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+    }
+    nav ul li {
+      display: inline-block;
+    }
+    .cart-icon {
+      color: #e0c37d;
+      font-size: 1.38rem;
+      padding: 1.15rem 1.6rem;
+      text-decoration: none;
+      transition: color 0.14s;
+    }
+    .cart-icon:hover {
+      color: #18a3c5;
+    }
+    .cart-page {
+      background: #18191f;
+      max-width: 680px;
+      margin: 3rem auto;
+      padding: 2.8rem 2rem 2.4rem;
+      border-radius: 26px;
+      box-shadow: 0 8px 36px #19204033;
+      text-align: center;
+    }
+    .cart-page h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #e0c37d;
+      margin-bottom: 1.5rem;
+      text-shadow: 0 1px 10px rgba(255, 255, 255, 0.05);
+    }
+    .cart-placeholder p {
+      color: #b7bcc2;
+      font-size: 1.12rem;
+      margin-bottom: 1.2rem;
+    }
+    .cart-placeholder img {
+      max-width: 220px;
+      border-radius: 12px;
+      box-shadow: 0px 4px 16px #18a3c566;
+      margin-bottom: 1.3rem;
+    }
+    button, .cart-placeholder button {
+      background: #18a3c5;
+      color: #fff;
+      font-size: 1.08rem;
+      font-weight: 600;
+      padding: 0.6rem 2.2rem;
+      border-radius: 16px;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 16px #1e3d5644;
+      transition: background 0.2s ease;
+      margin-top: 10px;
+    }
+    button:hover {
+      background: #e0c37d;
+      color: #191b22;
+    }
+    #thankYouMessage {
+      margin-top: 1.8rem;
+      font-size: 1.1rem;
+      color: #2dcdd9;
+      font-weight: 600;
+    }
+    footer {
+      background: #191b22;
+      color: #a8b0b8;
+      text-align: center;
+      padding: 1.07rem 0;
+      border-radius: 16px 16px 0 0;
+      margin-top: 3rem;
+      font-size: 1rem;
+      letter-spacing: 0.02em;
+      box-shadow: 0 -2px 12px #191b2244;
+    }
+    @media (max-width: 720px) {
+      .cart-page {
+        padding: 1.8rem 1rem;
+        max-width: 92vw;
+      }
+      .cart-page h1 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav>
+    <a href="main page.html" class="logo">Revive</a>
+    <ul>
+      <li><a href="login.html">Login</a></li>
+      <li>
+        <a href="cart.html" class="cart-icon" title="View Cart">
+          <i class="fas fa-shopping-cart"></i>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Cart Section -->
+  <section class="cart-page">
+    <h1><i class="fas fa-shopping-cart"></i> Your Cart</h1>
+    <div id="cartContent" class="cart-placeholder"></div>
+
+    <div id="confirmSection" style="margin-top: 25px; display: none;">
+      <button id="confirmButton"><i class="fas fa-check-circle"></i> Confirm Order</button>
+    </div>
+
+    <div id="thankYouMessage"></div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Revive Clothing. All rights reserved.</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    const cartDiv = document.getElementById("cartContent");
+    const confirmSection = document.getElementById("confirmSection");
+    const confirmButton = document.getElementById("confirmButton");
+    const thankYouMessage = document.getElementById("thankYouMessage");
+
+    const item = localStorage.getItem("cartItem");
+
+    if (item) {
+      cartDiv.innerHTML = `
+        <img src="${item}" alt="Selected Product" />
+        <p>You've selected this item. Ready to confirm your order?</p>
+      `;
+      confirmSection.style.display = "block";
+    } else {
+      cartDiv.innerHTML = `
+        <p>No items in your cart yet.</p>
+        <a href="buy.html"><button><i class="fas fa-arrow-left"></i> Back to Shop</button></a>
+      `;
+    }
+
+    confirmButton?.addEventListener("click", () => {
+      localStorage.removeItem("cartItem");
+      thankYouMessage.innerText = "✅ Thank you for shopping with Revive. Your ethical fashion is on its way!";
+      confirmSection.style.display = "none";
+      cartDiv.innerHTML = '';
+    });
+  </script>
+</body>
+</html>

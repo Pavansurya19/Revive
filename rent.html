@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rent Clothes | Revive</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    body {
+      background: #111318;
+      color: #f3f6fa;
+      font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+      font-size: 1.07rem;
+      margin: 0;
+      min-height: 100vh;
+    }
+    nav {
+      background: #191b22;
+      box-shadow: 0 2px 14px #16181d23;
+    }
+    .logo {
+      color: #18a3c5;
+      font-weight: 600;
+      font-size: 1.28rem;
+      letter-spacing: 1px;
+      text-decoration: none;
+      padding: 1.1rem 2.4rem 1.1rem 1.2rem;
+      display: inline-block;
+    }
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+    }
+    nav ul li {
+      display: inline-block;
+    }
+    .cart-icon {
+      color: #e0c37d;
+      font-size: 1.38rem;
+      padding: 1.15rem 1.6rem;
+      text-decoration: none;
+      transition: color 0.14s;
+    }
+    .cart-icon:hover {
+      color: #18a3c5;
+    }
+    .rent-page {
+      background: #18191f;
+      max-width: 980px;
+      margin: 3rem auto 2.8rem auto;
+      padding: 2.6rem 1.3rem 2.6rem 1.3rem;
+      border-radius: 28px;
+      box-shadow: 0 10px 38px #19204028;
+      text-align: center;
+    }
+    .rent-page h1 {
+      font-size: 2.18rem;
+      color: #18a3c5;
+      font-weight: 800;
+      letter-spacing: 1.1px;
+      margin-bottom: 2.1rem;
+      text-shadow: 0 2px 11px #1e202830;
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2.2rem;
+      justify-content: center;
+    }
+    .item {
+      background: #111318;
+      border-radius: 19px;
+      box-shadow: 0 4px 20px #18213d20;
+      padding: 1.35rem 1.3rem 1.05rem 1.3rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 1rem;
+      max-width: 185px;
+      min-width: 150px;
+      transition: box-shadow 0.16s;
+    }
+    .item img {
+      width: 132px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 1.13rem;
+      border: 2px solid #18a3c5;
+      box-shadow: 0 2px 14px #19204038;
+      background: rgba(20,22,28,0.13);
+      transition: transform 0.17s;
+    }
+    .item img:hover {
+      transform: scale(1.04);
+      box-shadow: 0 5px 26px #18a3c5aa;
+    }
+    .item button {
+      background: #18a3c5;
+      border: none;
+      color: #fff;
+      font-size: 1.05rem;
+      font-weight: 700;
+      border-radius: 16px;
+      padding: 0.6rem 2.2rem;
+      cursor: pointer;
+      margin-bottom: .18rem;
+      letter-spacing: 0.7px;
+      transition: background 0.14s, color 0.14s;
+      box-shadow: 0 2px 12px #19204025;
+    }
+    .item button:hover,
+    .item button:focus {
+      background: #e0c37d;
+      color: #232334;
+    }
+    footer {
+      background: #191b22;
+      color: #a8b0b8;
+      text-align: center;
+      padding: 1.07rem 0;
+      border-radius: 16px 16px 0 0;
+      margin-top: 3rem;
+      font-size: 1rem;
+      letter-spacing: 0.02em;
+      box-shadow: 0 -2px 12px #191b2244;
+    }
+    @media (max-width: 1140px) {
+      .gallery { gap: 1.3rem; }
+      .item { min-width: 145px; }
+    }
+    @media (max-width: 720px) {
+      .rent-page {
+        padding: 1.4rem 0.5rem 1.2rem 0.5rem;
+        max-width: 98vw;
+      }
+      .rent-page h1 { font-size: 1.25rem; }
+      .gallery { gap: 1.09rem; }
+      .item { min-width: 134px; max-width: 150px; padding: 1rem 0.43rem;}
+      .item img { width: 96px; height: 120px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav>
+    <a href="main page.html" class="logo">Revive</a>
+    <ul>
+      <li><a href="login.html">Login</a></li>
+      <li>
+        <a href="cart.html" class="cart-icon" title="View Cart">
+          <i class="fas fa-shopping-cart"></i>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Rent Section -->
+  <section class="rent-page">
+    <h1><i class="fas fa-calendar-check"></i> Rent Ethical Fashion</h1>
+
+    <div class="gallery">
+      <div class="item">
+        <img src="download (1).jpeg" alt="Ethical Dress 1" />
+        <button onclick="addToCart('download (1).jpeg')"><i class="fas fa-bag-shopping"></i> Rent Now</button>
+      </div>
+      <div class="item">
+        <img src="download.jpeg" alt="Ethical Dress 2" />
+        <button onclick="addToCart('download.jpeg')"><i class="fas fa-bag-shopping"></i> Rent Now</button>
+      </div>
+      <div class="item">
+        <img src="images.jpeg" alt="Ethical Dress 3" />
+        <button onclick="addToCart('images.jpeg')"><i class="fas fa-bag-shopping"></i> Rent Now</button>
+      </div>
+      <div class="item">
+        <img src="Gemini.png" alt="Ethical Dress 4" />
+        <button onclick="addToCart('Gemini.png')"><i class="fas fa-bag-shopping"></i> Rent Now</button>
+      </div>
+      <div class="item">
+        <img src="image2.jpg" alt="Ethical Dress 5" />
+        <button onclick="addToCart('image2.jpg')"><i class="fas fa-bag-shopping"></i> Rent Now</button>
+      </div>
+      <div class="item">
+        <img src="bamboo shirt.jpeg" alt="Ethical Dress 6" />
+        <button onclick="addToCart('bamboo shirt.jpeg')"><i class="fas fa-bag-shopping"></i> Rent Now</button>
+      </div>
+      <div class="item">
+        <img src="images (2).jpeg" alt="Ethical Dress 7" />
+        <button onclick="addToCart('images (2).jpeg')"><i class="fas fa-bag-shopping"></i> Rent Now</button>
+      </div>
+      <div class="item">
+        <img src="images (3).jpeg" alt="Ethical Dress 8" />
+        <button onclick="addToCart('images (3).jpeg')"><i class="fas fa-bag-shopping"></i> Rent Now</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Revive Clothing. All rights reserved.</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    function addToCart(imageSrc) {
+      localStorage.setItem("cartItem", imageSrc);
+      window.location.href = "cart.html";
+    }
+  </script>
+</body>
+</html>

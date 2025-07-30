@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Swap Clothes | Revive</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    body {
+      background: #111318;
+      color: #f3f6fa;
+      font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+      font-size: 1.09rem;
+      margin: 0;
+      min-height: 100vh;
+    }
+    nav {
+      background: #191b22;
+      box-shadow: 0 2px 14px #16181d23;
+    }
+    .logo {
+      color: #18a3c5;
+      font-weight: 600;
+      font-size: 1.28rem;
+      letter-spacing: 1px;
+      text-decoration: none;
+      padding: 1.1rem 2.4rem 1.1rem 1.2rem;
+      display: inline-block;
+    }
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+    }
+    nav ul li {
+      display: inline-block;
+    }
+    .cart-icon {
+      color: #e0c37d;
+      font-size: 1.38rem;
+      padding: 1.15rem 1.6rem;
+      text-decoration: none;
+      transition: color 0.14s;
+    }
+    .cart-icon:hover {
+      color: #18a3c5;
+    }
+    .swap-page {
+      background: #18191f;
+      max-width: 540px;
+      margin: 3rem auto 2.4rem auto;
+      padding: 2.9rem 2rem 2.2rem 2rem;
+      border-radius: 25px;
+      box-shadow: 0 10px 38px #1920401e;
+      text-align: center;
+    }
+    .swap-page h1 {
+      font-size: 2.15rem;
+      color: #18a3c5;
+      font-weight: 800;
+      margin-bottom: 1.2rem;
+      letter-spacing: 1px;
+      text-shadow: 0 2px 10px #1e202839;
+    }
+    .swap-page p {
+      color: #b7bcc2;
+      font-size: 1.13rem;
+      margin-bottom: 2.1rem;
+    }
+    .swap-form {
+      text-align: left;
+      background: none;
+      padding: 0;
+      margin: 0 auto 1.7rem auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1.1rem;
+    }
+    .swap-form label {
+      color: #e0c37d;
+      font-weight: 600;
+      font-size: 1.04rem;
+      margin-bottom: 0.3rem;
+      letter-spacing: 0.6px;
+    }
+    .swap-form input[type="file"] {
+      background: #22232a;
+      color: #2dcdd9;
+      border-radius: 5px;
+      border: 1px solid #1f2326;
+      padding: 0.4rem 0.8rem;
+      font-size: 1rem;
+      margin-bottom: 0.3rem;
+    }
+    .swap-form textarea {
+      background: #191b22;
+      color: #f3f6fa;
+      border: 1px solid #18a3c5;
+      border-radius: 6px;
+      padding: 0.7rem 1rem;
+      font-size: 1.09rem;
+      resize: vertical;
+      font-family: inherit;
+    }
+    .swap-form button {
+      background: #18a3c5;
+      color: #fff;
+      padding: 0.65rem 2.1rem;
+      font-size: 1.13rem;
+      font-weight: 700;
+      border: none;
+      border-radius: 17px;
+      margin-top: 1.1rem;
+      box-shadow: 0 4px 14px #181a2633;
+      cursor: pointer;
+      transition: background 0.16s, color 0.16s;
+      letter-spacing: 0.6px;
+    }
+    .swap-form button:hover,
+    .swap-form button:focus {
+      background: #e0c37d;
+      color: #232334;
+    }
+    .swap-message {
+      margin-top: 2rem;
+      font-size: 1.09rem;
+      color: #18a3c5;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      min-height: 1.2em;
+      transition: color 0.23s;
+    }
+    footer {
+      background: #191b22;
+      color: #a8b0b8;
+      text-align: center;
+      padding: 1.07rem 0;
+      border-radius: 16px 16px 0 0;
+      margin-top: 3rem;
+      font-size: 1rem;
+      letter-spacing: 0.02em;
+      box-shadow: 0 -2px 12px #191b2244;
+    }
+    @media (max-width: 730px) {
+      .swap-page {
+        padding: 1.5rem 0.7rem 1.4rem 0.7rem;
+        max-width: 98vw;
+      }
+      .swap-page h1 {
+        font-size: 1.3rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav>
+    <a href="main page.html" class="logo">Revive</a>
+    <ul>
+      <li>
+        <a href="cart.html" class="cart-icon" title="View Cart">
+          <i class="fas fa-shopping-cart"></i>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Swap Section -->
+  <section class="swap-page">
+    <h1><i class="fas fa-retweet"></i> Swap Your Style</h1>
+    <p>Upload a picture of the item you'd like to swap with the Revive community.<br>Describe your piece—help it find a loving new wardrobe!</p>
+
+    <form class="swap-form" id="swapForm">
+      <label for="swap-image"><i class="fas fa-image"></i> Upload Clothing Image:</label>
+      <input type="file" id="swap-image" accept="image/*" required />
+      
+      <label for="description"><i class="fas fa-file-alt"></i> Description:</label>
+      <textarea id="description" placeholder="Describe the item, size, brand, condition, etc..." rows="4" required></textarea>
+      
+      <button type="submit"><i class="fas fa-paper-plane"></i> Submit for Swap</button>
+    </form>
+
+    <div id="swap-message" class="swap-message"></div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Revive Clothing. All rights reserved.</p>
+  </footer>
+
+  <!-- JavaScript for form submission -->
+  <script>
+    document.getElementById("swapForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const imageInput = document.getElementById("swap-image");
+      const descriptionInput = document.getElementById("description");
+      const message = document.getElementById("swap-message");
+
+      if (imageInput.files.length > 0 && descriptionInput.value.trim()) {
+        message.textContent = "✅ Your swap was accepted and we're trying to match it with others.";
+        message.style.color = "#18a3c5";
+      } else {
+        message.textContent = "⚠️ Please fill out all required fields.";
+        message.style.color = "orange";
+      }
+    });
+  </script>
+</body>
+</html>

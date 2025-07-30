@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Revive | Sustainable Fashion</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    body {
+      background: #111318;
+      color: #f3f6fa;
+      font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+      font-size: 1.05rem;
+      margin: 0;
+      min-height: 100vh;
+    }
+    nav {
+      background: #191b22;
+    }
+    .hero.full-screen {
+      background: url('https://images.unsplash.com/photo-1512436991641-6745cdb1723f') no-repeat center center/cover, #191b22;
+      color: #f3f6fa;
+      padding: 3rem 1rem 2rem 1rem;
+      text-align: center;
+      border-bottom: 4px solid #18a3c5;
+      position: relative;
+    }
+    .hero.full-screen::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(25, 27, 34, 0.65);
+      z-index: 0;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+    .hero-content h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #18a3c5;
+      letter-spacing: 1px;
+      margin-bottom: 0.8rem;
+      text-shadow: 0 2px 12px #293a4e33;
+    }
+    .hero-content p {
+      font-size: 1.16rem;
+      color: #eaeaea;
+      margin-bottom: 1.5rem;
+      text-shadow: 0 2px 10px #15171e41;
+    }
+    .about-revive {
+      background: #111318;
+      padding: 3rem 2rem;
+      border-radius: 28px;
+      max-width: 900px;
+      margin: 3rem auto 2.2rem auto;
+      box-shadow: 0 8px 38px rgba(25, 32, 64, 0.25);
+      font-family: inherit;
+      color: #eaeaea;
+      line-height: 1.8;
+      font-size: 1.15rem;
+    }
+    .about-revive h2 {
+      color: #18a3c5;
+      font-weight: 800;
+      font-size: 2.3rem;
+      margin-bottom: 1.2rem;
+      letter-spacing: 1px;
+      text-shadow: 0 2px 14px #0007;
+    }
+    .about-revive p {
+      margin-bottom: 1.5rem;
+      text-align: justify;
+    }
+    .highlight-affordability {
+      color: #e0c37d;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+    .highlight-circularity {
+      color: #2dcdd9;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+    .highlight-transparency {
+      color: #be9d42;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+    .about-revive ul {
+      list-style-position: inside;
+      padding-left: 1.4rem;
+      margin-top: 8px;
+      margin-bottom: 1.3rem;
+    }
+    .about-revive ul li {
+      margin-bottom: 0.5rem;
+      color: #b6d5df;
+      font-size: 1.055rem;
+      letter-spacing: 0.2px;
+    }
+    .services-section {
+      background: #18191f;
+      border-radius: 25px;
+      max-width: 900px;
+      margin: 2.3rem auto 3.2rem auto;
+      box-shadow: 0 6px 32px #10121726;
+      padding: 2.6rem 1.7rem 2.3rem 1.7rem;
+      text-align: center;
+    }
+    .services-title {
+      color: #e0c37d;
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 1.3rem;
+      letter-spacing: 1px;
+    }
+    .services-desc {
+      color: #b7bcc2;
+      font-size: 1.09rem;
+      margin-bottom: 0.9rem;
+      margin-top: -0.6rem;
+    }
+    .services-options {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2.3rem;
+      margin: 1.8rem 0 0 0;
+    }
+    .service-btn {
+      background: #18a3c5;
+      color: #fff;
+      padding: 1.1rem 2.9rem;
+      border-radius: 19px;
+      font-size: 1.18rem;
+      font-weight: 700;
+      border: none;
+      letter-spacing: 1.1px;
+      transition: background 0.16s, color 0.16s, box-shadow 0.17s;
+      cursor: pointer;
+      box-shadow: 0 2px 16px #102a4199;
+      text-decoration: none;
+      margin-bottom: 0.4rem;
+    }
+    .service-btn.buy {
+      background: #be9d42;
+      color: #222;
+    }
+    .service-btn:hover,
+    .service-btn:focus {
+      background: #e0c37d;
+      color: #191b22;
+    }
+    .impact-section {
+      background: #111318;
+      border-radius: 28px;
+      max-width: 900px;
+      margin: 3rem auto 2.8rem auto;
+      box-shadow: 0 8px 38px rgba(25, 32, 64, 0.23);
+      font-family: inherit;
+      color: #eaeaea;
+      line-height: 1.8;
+      font-size: 1.15rem;
+      padding: 3rem 2rem;
+    }
+    .impact-section h2 {
+      color: #2dcdd9;
+      font-weight: 800;
+      font-size: 2.3rem;
+      margin-bottom: 1.2rem;
+      letter-spacing: 1px;
+      text-shadow: 0 2px 14px #0008;
+    }
+    .impact-section ul {
+      list-style-position: inside;
+      padding-left: 1.45rem;
+      margin-bottom: 1.5rem;
+    }
+    .impact-section ul li {
+      margin-bottom: 0.48rem;
+      color: #cae7f1;
+      font-size: 1.07rem;
+    }
+    .impact-section strong {
+      color: #e0c37d;
+    }
+    /* Founders Section */
+    .founders-section {
+      background: #191b22;
+      border-radius: 24px;
+      max-width: 900px;
+      margin: 3.2rem auto 3rem auto;
+      box-shadow: 0 5px 30px #22242b29;
+      font-family: inherit;
+      color: #f3f6fa;
+      padding: 2.5rem 2rem 2.8rem 2rem;
+      text-align: center;
+    }
+    .founders-section h2 {
+      color: #18a3c5;
+      font-size: 2.2rem;
+      font-weight: 800;
+      margin-bottom: 2.1rem;
+      letter-spacing: 0.9px;
+      text-shadow: 0 2px 10px #0007;
+    }
+    .founders-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2.5rem;
+      justify-content: center;
+      margin-bottom: 1.9rem;
+    }
+    .founder-card {
+      background: #111318;
+      border-radius: 21px;
+      box-shadow: 0 2px 18px #191b2240;
+      padding: 2.2rem 1.4rem;
+      min-width: 220px;
+      max-width: 295px;
+      flex: 1 1 220px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: box-shadow 0.17s;
+    }
+    .founder-card:hover {
+      box-shadow: 0 6px 24px #18a3c5a0;
+    }
+    .founder-icon {
+      font-size: 2.7rem;
+      color: #be9d42;
+      margin-bottom: 0.7rem;
+    }
+    .founder-name {
+      font-weight: 700;
+      color: #2dcdd9;
+      font-size: 1.15rem;
+      margin-bottom: 0.38rem;
+      letter-spacing: 0.8px;
+    }
+    .founder-role {
+      color: #e0c37d;
+      font-weight: 600;
+      font-size: 1.03rem;
+      margin-bottom: 0.83rem;
+      letter-spacing: 0.35px;
+    }
+    .founder-desc {
+      color: #b6d5df;
+      font-size: 1.02rem;
+      margin-bottom: 0.3rem;
+    }
+    @media (max-width: 900px) {
+      .about-revive, .services-section, .impact-section, .founders-section {
+        max-width: 97vw;
+      }
+      .founders-list {
+        gap: 1.3rem;
+      }
+    }
+    @media (max-width: 750px) {
+      .founders-list {
+        flex-direction: column;
+        gap: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav>
+    <a href="main page.html" class="logo">Revive</a>
+    <ul>
+      <li><a href="login.html">Login</a></li>
+      <li>
+        <a href="cart.html" class="cart-icon" title="View Cart">
+          <i class="fas fa-shopping-cart"></i>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero full-screen">
+    <div class="hero-content">
+      <h1>Welcome to Revive</h1>
+      <p>Swap. Rent. Repeat. Revive your style and the planet.</p>
+    </div>
+  </header>
+
+  <!-- About Revive Section -->
+  <section class="about-revive" aria-label="About Revive Company">
+    <h2>About Revive</h2>
+    <p>
+      <strong>Revive</strong> is India's pioneering <span class="highlight-circularity">rent–swap–buy</span> platform dedicated to revolutionizing ethical fashion.
+      We believe fashion should empower people and protect the planet, not harm them.
+    </p>
+    <p>
+      Our mission is to make sustainable fashion truly <span class="highlight-affordability">affordable</span>, <span class="highlight-circularity">circular</span>, and <span class="highlight-transparency">transparent</span>—accessible to every conscious Indian wardrobe.
+    </p>
+    <p>
+      We collaborate closely with local artisans, organic cotton farmers, and certified ethical manufacturers to craft garments that are beautiful, durable, and kind to the Earth. By connecting these makers directly with consumers through rent, swap, and purchase options, we reduce waste and uplift communities.
+    </p>
+    <p>
+      At Revive, you don’t just wear clothes; you share stories, support traditions, and join a growing movement redefining India’s fashion future.
+      Our platform makes it easy to choose clothing that aligns with your values—without compromising style or affordability.
+      Whether it’s the convenience of renting elegant pieces, the fun of swapping loved garments, or the pride in buying artisan-crafted clothes, every choice contributes to a healthier planet and fairer economy.
+    </p>
+    <p>
+      Together, we imagine a world where every garment tells a story of empowerment, sustainability, and hope.
+    </p>
+  </section>
+
+  <!-- Our Services Section -->
+  <section class="services-section" aria-label="Revive Services">
+    <h2 class="services-title"><i class="fas fa-hands-helping"></i> Our Services</h2>
+    <div class="services-desc">
+      Make your wardrobe ethical, affordable, and circular by choosing how you want to engage:
+    </div>
+    <div class="services-options">
+      <a href="swap.html" class="service-btn"><i class="fas fa-retweet"></i> Swap</a>
+      <a href="rent.html" class="service-btn"><i class="fas fa-calendar-check"></i> Rent</a>
+      <a href="buy.html" class="service-btn buy"><i class="fas fa-shopping-bag"></i> Buy</a>
+    </div>
+  </section>
+
+  <!-- Impact Section -->
+  <section class="impact-section" aria-label="Impact of Revive">
+    <h2>Our Environmental & Social Impact</h2>
+    <p>
+      At Revive, impact isn’t just a value—it’s a continuous, transparent result of every action our community takes. We’re committed to solving fashion’s waste problem and supporting the people behind each garment.
+    </p>
+    <p>
+      <strong>Environmental Impact:</strong>
+      <ul>
+        <li>For every 1,000 garments circulated, we prevent over <strong>3,000 kg of CO₂ emissions</strong>—that’s equivalent to planting 75 mature trees.</li>
+        <li>We save more than <strong>1.5 million liters of water</strong>—protecting a vital natural resource in a water-stressed country.</li>
+        <li>More than <strong>500 kg of textile waste</strong> are diverted from landfill and incineration, drastically reducing fashion’s environmental footprint.</li>
+      </ul>
+      Our rent–swap–buy model directly challenges the take-make-waste cycle of fast fashion, giving new life to every piece.
+    </p>
+    <p>
+      <strong>Social Empowerment:</strong>
+      <ul>
+        <li>By buying, renting, and swapping with Revive, you uplift skilled Indian artisans and makers through fair wages and long-term partnerships.</li>
+        <li>We work to preserve time-honored crafts—from embroidery to weaving—by ensuring artisans can thrive in the modern economy.</li>
+        <li>Our transparent supply chain upholds safe working conditions at every step, so the clothes you wear are as ethical as they are elegant.</li>
+      </ul>
+      Community events, campus drives, and digital engagement help seed a new culture of conscious consumption across India.
+    </p>
+    <p style="color:#e0c37d;font-weight:600;font-size:1.11rem; margin-top:1.7rem;">
+      With every choice on Revive, you become a changemaker.<br>
+      Every garment counts. Every person matters.
+    </p>
+  </section>
+
+  <!-- Founders Section -->
+  <section class="founders-section" aria-label="Meet the Founders">
+    <h2><i class="fas fa-user-tie"></i> Meet the Founders</h2>
+    <div class="founders-list">
+      <div class="founder-card">
+        <div class="founder-icon"><i class="fas fa-lightbulb"></i></div>
+        <div class="founder-name">Sanyukta Singh Shekawat</div>
+        <div class="founder-role">Chief Visionary Officer</div>
+        <div class="founder-desc">
+          Sanyukta leads Revive’s creative and strategic direction, infusing each initiative with purpose and bold imagination. She champions sustainable innovation and storytelling that connects consumers to India’s rich textile heritage.
+        </div>
+      </div>
+      <div class="founder-card">
+        <div class="founder-icon"><i class="fas fa-cogs"></i></div>
+        <div class="founder-name">Jeevan</div>
+        <div class="founder-role">Chief Operations & Growth Officer</div>
+        <div class="founder-desc">
+          Jeevan is the architect of Revive’s seamless circular model—turning concepts into action. He oversees operations, supply chain partnerships, and growth strategies, ensuring Revive’s community gets maximum value and impact.
+        </div>
+      </div>
+      <div class="founder-card">
+        <div class="founder-icon"><i class="fas fa-users"></i></div>
+        <div class="founder-name">Pavan Surya</div>
+        <div class="founder-role">Chief Community & Impact Officer</div>
+        <div class="founder-desc">
+          Pavan is the heart of Revive’s user engagement and social vision. Focused on empowering artisans and building a vibrant ethical fashion movement, he connects people, crafts, and data to create measurable positive change.
+        </div>
+      </div>
+    </div>
+    <div style="color:#b6d5df;font-size:1.04rem;margin-top:1.5rem;">
+      Together, the founders combine vision, operational excellence, and deep community commitment—driving Revive’s mission to make ethical fashion the new standard in India.
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Revive Clothing. All rights reserved.</p>
+  </footer>
+</body>
+</html>
